@@ -1,0 +1,17 @@
+{
+    "name": "poke-extension",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "content_security_policy": "script-src 'self' 'sha256-<the extension hash>'; object-src 'self'",
+    "background": { "scripts": ["hot-reload.js"] },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["/static/css/main.css"],
+            "js": ["/static/js/main.js"]
+        }
+    ]
+}
